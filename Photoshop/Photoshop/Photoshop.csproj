@@ -47,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BitmapTransform\IBitmapTransform.cs" />
+    <Compile Include="BitmapTransform\TransformBrightness.cs" />
     <Compile Include="Brightnessform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +127,12 @@
     <Compile Include="InsertTextform.Designer.cs">
       <DependentUpon>InsertTextform.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interface\MainInterface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface\MainInterface.Designer.cs">
+      <DependentUpon>MainInterface.cs</DependentUpon>
+    </Compile>
     <Compile Include="Invertform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,6 +210,9 @@
     <EmbeddedResource Include="InsertTextform.resx">
       <DependentUpon>InsertTextform.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interface\MainInterface.resx">
+      <DependentUpon>MainInterface.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Invertform.resx">
       <DependentUpon>Invertform.cs</DependentUpon>
     </EmbeddedResource>
@@ -241,7 +252,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
