@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="BitmapTransform\IBitmapTransform.cs" />
     <Compile Include="BitmapTransform\TransformBrightness.cs" />
+    <Compile Include="BitmapTransform\TransformColorFilter.cs" />
     <Compile Include="BitmapTransform\TransformContrast.cs" />
     <Compile Include="BitmapTransform\TransformInvert.cs" />
     <Compile Include="BitmapTransform\TransformRotate.cs" />

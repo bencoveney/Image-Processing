@@ -18,7 +18,7 @@ namespace Photoshop.BitmapTransform
             parameterDialog = new Form();
             parameterDialog.Text = "Rotation Parameters";
 
-            // Add the brightness control to the form (with a label)
+            // Add the rotation control to the form (with a label)
             Label rotationLabel = new Label();
             rotationLabel.Text = "Rotation:";
             rotationLabel.Location = new Point(10, 13);
@@ -45,7 +45,7 @@ namespace Photoshop.BitmapTransform
 
         private void CloseParameterDialog(object sender, EventArgs e)
         {
-            // Find the brightness control
+            // Find the rotation control
             NumericUpDown rotationControl = parameterDialog.Controls.Find("rotationControl", true).First() as NumericUpDown;
 
             // Extract the value

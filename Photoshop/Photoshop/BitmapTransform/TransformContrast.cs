@@ -20,7 +20,7 @@ namespace Photoshop.BitmapTransform
             parameterDialog = new Form();
             parameterDialog.Text = "Constrast Parameters";
 
-            // Add the brightness control to the form (with a label)
+            // Add the contrast control to the form (with a label)
             Label contrastLabel = new Label();
             contrastLabel.Text = "Constrast:";
             contrastLabel.Location = new Point(10, 13);
@@ -46,7 +46,7 @@ namespace Photoshop.BitmapTransform
 
         private void CloseParameterDialog(object sender, EventArgs e)
         {
-            // Find the brightness control
+            // Find the contrast control
             NumericUpDown contrastControl = parameterDialog.Controls.Find("contrastControl", true).First() as NumericUpDown;
 
             // Extract the value
