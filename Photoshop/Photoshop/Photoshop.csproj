@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BitmapTransform\TransformFlip.cs" />
     <Compile Include="BitmapTransform\IBitmapTransform.cs" />
     <Compile Include="BitmapTransform\TransformBrightness.cs" />
     <Compile Include="BitmapTransform\TransformColorFilter.cs" />
@@ -72,12 +73,6 @@
     </None>
     <None Include="TODO\DeadPixelform.designer.cs">
       <DependentUpon>DeadPixelform.cs</DependentUpon>
-    </None>
-    <None Include="TODO\Flipform.cs">
-      <SubType>Form</SubType>
-    </None>
-    <None Include="TODO\Flipform.designer.cs">
-      <DependentUpon>Flipform.cs</DependentUpon>
     </None>
     <None Include="TODO\Gammaform.cs">
       <SubType>Form</SubType>
@@ -157,9 +152,6 @@
     </None>
     <None Include="TODO\DeadPixelform.resx">
       <DependentUpon>DeadPixelform.cs</DependentUpon>
-    </None>
-    <None Include="TODO\Flipform.resx">
-      <DependentUpon>Flipform.cs</DependentUpon>
     </None>
     <None Include="TODO\Gammaform.resx">
       <DependentUpon>Gammaform.cs</DependentUpon>

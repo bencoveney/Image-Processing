@@ -121,6 +121,7 @@ namespace Photoshop.Interface
             result.Add("Invert", new TransformInvert());
             result.Add("Rotate", new TransformRotate());
             result.Add("Color Filter", new TransformColorFilter());
+            result.Add("Flip", new TransformFlip());
 
             return result;
         }
