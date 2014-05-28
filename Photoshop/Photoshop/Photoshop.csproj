@@ -61,6 +61,84 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="TODO\Cropform.cs">
+      <SubType>Form</SubType>
+    </None>
+    <None Include="TODO\Cropform.designer.cs">
+      <DependentUpon>Cropform.cs</DependentUpon>
+    </None>
+    <None Include="TODO\DeadPixelform.cs">
+      <SubType>Form</SubType>
+    </None>
+    <None Include="TODO\DeadPixelform.designer.cs">
+      <DependentUpon>DeadPixelform.cs</DependentUpon>
+    </None>
+    <None Include="TODO\Flipform.cs">
+      <SubType>Form</SubType>
+    </None>
+    <None Include="TODO\Flipform.designer.cs">
+      <DependentUpon>Flipform.cs</DependentUpon>
+    </None>
+    <None Include="TODO\Gammaform.cs">
+      <SubType>Form</SubType>
+    </None>
+    <None Include="TODO\Gammaform.designer.cs">
+      <DependentUpon>Gammaform.cs</DependentUpon>
+    </None>
+    <None Include="TODO\Grayscaleform.cs">
+      <SubType>Form</SubType>
+    </None>
+    <None Include="TODO\Grayscaleform.designer.cs">
+      <DependentUpon>Grayscaleform.cs</DependentUpon>
+    </None>
+    <None Include="TODO\HSLConversionform.cs">
+      <SubType>Form</SubType>
+    </None>
+    <None Include="TODO\HSLConversionform.designer.cs">
+      <DependentUpon>HSLConversionform.cs</DependentUpon>
+    </None>
+    <None Include="TODO\ImageAnalyseform.cs">
+      <SubType>Form</SubType>
+    </None>
+    <None Include="TODO\ImageAnalyseform.designer.cs">
+      <DependentUpon>ImageAnalyseform.cs</DependentUpon>
+    </None>
+    <None Include="TODO\InsertImageform.cs">
+      <SubType>Form</SubType>
+    </None>
+    <None Include="TODO\InsertImageform.designer.cs">
+      <DependentUpon>InsertImageform.cs</DependentUpon>
+    </None>
+    <None Include="TODO\InsertShapeform.cs">
+      <SubType>Form</SubType>
+    </None>
+    <None Include="TODO\InsertShapeform.designer.cs">
+      <DependentUpon>InsertShapeform.cs</DependentUpon>
+    </None>
+    <None Include="TODO\InsertTextform.cs">
+      <SubType>Form</SubType>
+    </None>
+    <None Include="TODO\InsertTextform.designer.cs">
+      <DependentUpon>InsertTextform.cs</DependentUpon>
+    </None>
+    <None Include="TODO\Resizeform.cs">
+      <SubType>Form</SubType>
+    </None>
+    <None Include="TODO\Resizeform.designer.cs">
+      <DependentUpon>Resizeform.cs</DependentUpon>
+    </None>
+    <None Include="TODO\Resolutionform.cs">
+      <SubType>Form</SubType>
+    </None>
+    <None Include="TODO\Resolutionform.designer.cs">
+      <DependentUpon>Resolutionform.cs</DependentUpon>
+    </None>
+    <None Include="TODO\YCbCrConversionform.cs">
+      <SubType>Form</SubType>
+    </None>
+    <None Include="TODO\YCbCrConversionform.designer.cs">
+      <DependentUpon>YCbCrConversionform.cs</DependentUpon>
+    </None>
     <EmbeddedResource Include="Interface\MainInterface.resx">
       <DependentUpon>MainInterface.cs</DependentUpon>
     </EmbeddedResource>
@@ -74,6 +152,45 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="TODO\Cropform.resx">
+      <DependentUpon>Cropform.cs</DependentUpon>
+    </None>
+    <None Include="TODO\DeadPixelform.resx">
+      <DependentUpon>DeadPixelform.cs</DependentUpon>
+    </None>
+    <None Include="TODO\Flipform.resx">
+      <DependentUpon>Flipform.cs</DependentUpon>
+    </None>
+    <None Include="TODO\Gammaform.resx">
+      <DependentUpon>Gammaform.cs</DependentUpon>
+    </None>
+    <None Include="TODO\Grayscaleform.resx">
+      <DependentUpon>Grayscaleform.cs</DependentUpon>
+    </None>
+    <None Include="TODO\HSLConversionform.resx">
+      <DependentUpon>HSLConversionform.cs</DependentUpon>
+    </None>
+    <None Include="TODO\ImageAnalyseform.resx">
+      <DependentUpon>ImageAnalyseform.cs</DependentUpon>
+    </None>
+    <None Include="TODO\InsertImageform.resx">
+      <DependentUpon>InsertImageform.cs</DependentUpon>
+    </None>
+    <None Include="TODO\InsertShapeform.resx">
+      <DependentUpon>InsertShapeform.cs</DependentUpon>
+    </None>
+    <None Include="TODO\InsertTextform.resx">
+      <DependentUpon>InsertTextform.cs</DependentUpon>
+    </None>
+    <None Include="TODO\Resizeform.resx">
+      <DependentUpon>Resizeform.cs</DependentUpon>
+    </None>
+    <None Include="TODO\Resolutionform.resx">
+      <DependentUpon>Resolutionform.cs</DependentUpon>
+    </None>
+    <None Include="TODO\YCbCrConversionform.resx">
+      <DependentUpon>YCbCrConversionform.cs</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
