@@ -51,6 +51,7 @@
     <Compile Include="BitmapTransform\TransformBrightness.cs" />
     <Compile Include="BitmapTransform\TransformContrast.cs" />
     <Compile Include="BitmapTransform\TransformInvert.cs" />
+    <Compile Include="BitmapTransform\TransformRotate.cs" />
     <Compile Include="Interface\MainInterface.cs">
       <SubType>Form</SubType>
     </Compile>

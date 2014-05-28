@@ -119,6 +119,7 @@ namespace Photoshop.Interface
             result.Add("Brightness", new TransformBrightness());
             result.Add("Contrast", new TransformContrast());
             result.Add("Invert", new TransformInvert());
+            result.Add("Rotate", new TransformRotate());
 
             return result;
         }
