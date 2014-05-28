@@ -1,60 +1,49 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Drawing;
 
-namespace Photoshop
+namespace Photoshop.BitmapTransform
 {
-    public partial class DeadPixelform : Form
+    class TransformRemoveDeadPixel : IBitmapTransform
     {
-        public DeadPixelform()
+        static int k = 5; 
+        static int[,] C = new int[k, 4];
+
+        public void ShowParameterDialog()
         {
-            InitializeComponent();
+            // No parameters required
+            // Do nothing
         }
 
-
-        static int k = 5; static int[,] C = new int[k, 4];
-        private void Main(string OpenFile, string SaveFile)
+        public Bitmap Transform(Bitmap Source)
         {
-            if (OpenFile != null && SaveFile != null)
+            Bitmap Image = new Bitmap(Source);
+            int Rows = Image.Height; int Cols = Image.Width; int[, ,] ImageDist = null;
+            int[, ,] ReconPixel = null; int R; int G; int B; int A;
+            int[, ,] OrigImage = ImRead(Image, Rows, Cols); k = 4;
+            Bitmap ReconImage = Image;
+            for (int i = 0; i < Rows; i++)
             {
-                Bitmap Image = new Bitmap(OpenFile);
-                int Rows = Image.Height; int Cols = Image.Width; int[, ,] ImageDist = null;
-                int[, ,] ReconPixel = null; int R; int G; int B; int A;
-                int[, ,] OrigImage = ImRead(Image, Rows, Cols); k = 4;
-                Bitmap ReconImage = Image;
-                for (int i = 0; i < Rows; i++)
+                for (int j = 0; j < Cols; j++)
                 {
-                    for (int j = 0; j < Cols; j++)
+                    if (OrigImage[i, j, 0] == 0 && OrigImage[i, j, 1] == 0 && OrigImage[i, j, 2] == 0)
                     {
-                        if (OrigImage[i, j, 0] == 0 && OrigImage[i, j, 1] == 0 && OrigImage[i, j, 2] == 0)
-                        {
-                            ImageDist = ImDist(OrigImage, i, j, Rows, Cols, Image);
-                            ReconPixel = ImColour(ImageDist, i, j);
-                            A = Image.GetPixel(j, i).A;
-                            R = ReconPixel[0, 0, 0];
-                            G = ReconPixel[0, 0, 1];
-                            B = ReconPixel[0, 0, 2];
-                            Color NewColour = Color.FromArgb(A, R, G, B);
-                            ReconImage.SetPixel(j, i, NewColour);
-                        }
+                        ImageDist = ImDist(OrigImage, i, j, Rows, Cols, Image);
+                        ReconPixel = ImColour(ImageDist, i, j);
+                        A = Image.GetPixel(j, i).A;
+                        R = ReconPixel[0, 0, 0];
+                        G = ReconPixel[0, 0, 1];
+                        B = ReconPixel[0, 0, 2];
+                        Color NewColour = Color.FromArgb(A, R, G, B);
+                        ReconImage.SetPixel(j, i, NewColour);
                     }
                 }
-                this.NewImagepictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-                NewImagepictureBox.Image = ReconImage;
-                ReconImage.Save(SaveFile);
             }
-            else
-            {
-                MessageBox.Show("Please make sure you have selected an Open File and a Save File then try again");
-            }
-        }
 
+            return ReconImage;
+        }
 
         static int[, ,] ImDist(int[, ,] OrigImage, int i, int j, int Rows, int Cols, Bitmap Image)
         {
@@ -167,57 +156,6 @@ namespace Photoshop
                 }
             }
             return OrigImage;
-        }
-
-
-        private void Startbutton_Click(object sender, EventArgs e)
-        {
-            string OpenFile = OpenFiletextBox.Text;
-            string SaveFile = SaveFiletextBox.Text;
-            Main(OpenFile, SaveFile);
-        }
-
-
-        private void OpenFilebutton_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.InitialDirectory = @"\C";
-            openFileDialog1.FilterIndex = 2;
-            openFileDialog1.RestoreDirectory = true;
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                OpenFiletextBox.Text = Convert.ToString(openFileDialog1.FileName);
-            }
-            Bitmap OrigImage = new Bitmap(OpenFiletextBox.Text);
-            this.OrigImagepictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-            OrigImagepictureBox.Image = OrigImage;
-        }
-
-
-        private void SaveFilebutton_Click(object sender, EventArgs e)
-        {
-            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-            saveFileDialog1.InitialDirectory = @"\C";
-            saveFileDialog1.FilterIndex = 2;
-            saveFileDialog1.RestoreDirectory = true;
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                SaveFiletextBox.Text = Convert.ToString(saveFileDialog1.FileName);
-            }
-        }
-
-
-        private void Backbutton_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            MainMenuform MainMenu = new MainMenuform();
-            MainMenu.ShowDialog();
-        }
-
-
-        private void Exitbutton_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
     }
 }

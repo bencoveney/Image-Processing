@@ -47,12 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BitmapTransform\TransformConvertHSL.cs" />
+    <Compile Include="BitmapTransform\TransformConvertGreyscale.cs" />
+    <Compile Include="BitmapTransform\TransformConvertYCbCr.cs" />
     <Compile Include="BitmapTransform\TransformFlip.cs" />
     <Compile Include="BitmapTransform\IBitmapTransform.cs" />
     <Compile Include="BitmapTransform\TransformBrightness.cs" />
     <Compile Include="BitmapTransform\TransformColorFilter.cs" />
     <Compile Include="BitmapTransform\TransformContrast.cs" />
+    <Compile Include="BitmapTransform\TransformGamma.cs" />
     <Compile Include="BitmapTransform\TransformInvert.cs" />
+    <Compile Include="BitmapTransform\TransformRemoveDeadPixel.cs" />
+    <Compile Include="BitmapTransform\TransformResize.cs" />
     <Compile Include="BitmapTransform\TransformRotate.cs" />
     <Compile Include="Interface\MainInterface.cs">
       <SubType>Form</SubType>
@@ -67,30 +73,6 @@
     </None>
     <None Include="TODO\Cropform.designer.cs">
       <DependentUpon>Cropform.cs</DependentUpon>
-    </None>
-    <None Include="TODO\DeadPixelform.cs">
-      <SubType>Form</SubType>
-    </None>
-    <None Include="TODO\DeadPixelform.designer.cs">
-      <DependentUpon>DeadPixelform.cs</DependentUpon>
-    </None>
-    <None Include="TODO\Gammaform.cs">
-      <SubType>Form</SubType>
-    </None>
-    <None Include="TODO\Gammaform.designer.cs">
-      <DependentUpon>Gammaform.cs</DependentUpon>
-    </None>
-    <None Include="TODO\Grayscaleform.cs">
-      <SubType>Form</SubType>
-    </None>
-    <None Include="TODO\Grayscaleform.designer.cs">
-      <DependentUpon>Grayscaleform.cs</DependentUpon>
-    </None>
-    <None Include="TODO\HSLConversionform.cs">
-      <SubType>Form</SubType>
-    </None>
-    <None Include="TODO\HSLConversionform.designer.cs">
-      <DependentUpon>HSLConversionform.cs</DependentUpon>
     </None>
     <None Include="TODO\ImageAnalyseform.cs">
       <SubType>Form</SubType>
@@ -128,12 +110,6 @@
     <None Include="TODO\Resolutionform.designer.cs">
       <DependentUpon>Resolutionform.cs</DependentUpon>
     </None>
-    <None Include="TODO\YCbCrConversionform.cs">
-      <SubType>Form</SubType>
-    </None>
-    <None Include="TODO\YCbCrConversionform.designer.cs">
-      <DependentUpon>YCbCrConversionform.cs</DependentUpon>
-    </None>
     <EmbeddedResource Include="Interface\MainInterface.resx">
       <DependentUpon>MainInterface.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,18 +125,6 @@
     </Compile>
     <None Include="TODO\Cropform.resx">
       <DependentUpon>Cropform.cs</DependentUpon>
-    </None>
-    <None Include="TODO\DeadPixelform.resx">
-      <DependentUpon>DeadPixelform.cs</DependentUpon>
-    </None>
-    <None Include="TODO\Gammaform.resx">
-      <DependentUpon>Gammaform.cs</DependentUpon>
-    </None>
-    <None Include="TODO\Grayscaleform.resx">
-      <DependentUpon>Grayscaleform.cs</DependentUpon>
-    </None>
-    <None Include="TODO\HSLConversionform.resx">
-      <DependentUpon>HSLConversionform.cs</DependentUpon>
     </None>
     <None Include="TODO\ImageAnalyseform.resx">
       <DependentUpon>ImageAnalyseform.cs</DependentUpon>
@@ -179,9 +143,6 @@
     </None>
     <None Include="TODO\Resolutionform.resx">
       <DependentUpon>Resolutionform.cs</DependentUpon>
-    </None>
-    <None Include="TODO\YCbCrConversionform.resx">
-      <DependentUpon>YCbCrConversionform.cs</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -118,10 +118,16 @@ namespace Photoshop.Interface
 
             result.Add("Brightness", new TransformBrightness());
             result.Add("Contrast", new TransformContrast());
-            result.Add("Invert", new TransformInvert());
-            result.Add("Rotate", new TransformRotate());
-            result.Add("Color Filter", new TransformColorFilter());
+            result.Add("Invert Colors", new TransformInvert());
             result.Add("Flip", new TransformFlip());
+            result.Add("Rotate", new TransformRotate());
+            result.Add("Resize", new TransformResize());
+            result.Add("Color Filter", new TransformColorFilter());
+            result.Add("Remove Dead Pixels", new TransformRemoveDeadPixel());
+            result.Add("Gamma", new TransformGamma());
+            result.Add("Convert to Greyscale", new TransformConvertGreyscale());
+            result.Add("Convert to HSL", new TransformConvertHSL());
+            result.Add("Convert to YCbCr", new TransformConvertYCbCr());
 
             return result;
         }
