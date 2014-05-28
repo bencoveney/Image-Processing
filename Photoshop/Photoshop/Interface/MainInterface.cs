@@ -145,6 +145,32 @@ namespace Photoshop.Interface
             ImagePreview.Image = CurrentImage;
         }
 
+        private void ImagePreview_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (CurrentImage == null)
+            {
+                toolStripStatusLabel.Text = "";
+                return;
+            }
+
+            // Get the mouse position
+            int MousePositionX = e.X;
+            int MousePositionY = e.Y;
+            string mousePosString = string.Format("Mouse Position: ({0},{1})", MousePositionX, MousePositionY);
+
+            // Is the mouse over the image?
+            if(MousePositionX < CurrentImage.Width && MousePositionY < CurrentImage.Height)
+            {
+                // Get the color under the pointer
+                Color c = CurrentImage.GetPixel(MousePositionX,MousePositionY);
+                toolStripStatusLabel.Text = string.Format("Mouse Position: ({0},{1}) Color: (R:{2}, G:{3}, B:{4})", MousePositionX, MousePositionY, c.R, c.G, c.B);
+            }
+            else
+            {
+                toolStripStatusLabel.Text = string.Format("Mouse Position: ({0},{1})", MousePositionX, MousePositionY);
+            }
+        }
+
         #endregion
 
     }
