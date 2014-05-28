@@ -72,6 +72,7 @@
             // 
             // saveToolStripMenuItem
             // 
+            this.saveToolStripMenuItem.Enabled = false;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveToolStripMenuItem.Text = "Save";
@@ -86,6 +87,7 @@
             // 
             // analyseImageToolStripMenuItem
             // 
+            this.analyseImageToolStripMenuItem.Enabled = false;
             this.analyseImageToolStripMenuItem.Name = "analyseImageToolStripMenuItem";
             this.analyseImageToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
             this.analyseImageToolStripMenuItem.Text = "Analyse Image";
@@ -106,6 +108,7 @@
             // 
             // ImagePreview
             // 
+            this.ImagePreview.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ImagePreview.Location = new System.Drawing.Point(13, 28);
             this.ImagePreview.Name = "ImagePreview";
             this.ImagePreview.Size = new System.Drawing.Size(405, 380);

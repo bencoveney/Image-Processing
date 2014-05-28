@@ -41,7 +41,11 @@ namespace Photoshop.Interface
             if (result == DialogResult.OK)
             {
                 setCurrentImage(new Bitmap(openFileDialog.FileName));
+
+                // Enable all greyed-out menu items
+                saveToolStripMenuItem.Enabled = true;
                 transformToolStripMenuItem.Enabled = true;
+                analyseImageToolStripMenuItem.Enabled = true;
             }
         }
 
@@ -80,8 +84,8 @@ namespace Photoshop.Interface
             for (int i = 0; i < TransformDictionary.Count; i++)
             {
                 items[i] = new ToolStripMenuItem();
-                items[0].Text = TransformDictionary.ElementAt(i).Key;
-                items[0].Click += new EventHandler(transformToolStripItem_Click);
+                items[i].Text = TransformDictionary.ElementAt(i).Key;
+                items[i].Click += new EventHandler(transformToolStripItem_Click);
             }
 
             // Add the list of new items to the menu
@@ -114,6 +118,7 @@ namespace Photoshop.Interface
 
             result.Add("Brightness", new TransformBrightness());
             result.Add("Contrast", new TransformContrast());
+            result.Add("Invert", new TransformInvert());
 
             return result;
         }

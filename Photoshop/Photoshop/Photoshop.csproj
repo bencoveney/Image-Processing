@@ -49,175 +49,18 @@
   <ItemGroup>
     <Compile Include="BitmapTransform\IBitmapTransform.cs" />
     <Compile Include="BitmapTransform\TransformBrightness.cs" />
-    <Compile Include="Brightnessform.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Brightnessform.Designer.cs">
-      <DependentUpon>Brightnessform.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ColorFilterform.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ColorFilterform.Designer.cs">
-      <DependentUpon>ColorFilterform.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Contrastform.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Contrastform.Designer.cs">
-      <DependentUpon>Contrastform.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Cropform.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Cropform.Designer.cs">
-      <DependentUpon>Cropform.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DeadPixelform.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DeadPixelform.Designer.cs">
-      <DependentUpon>DeadPixelform.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Flipform.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Flipform.Designer.cs">
-      <DependentUpon>Flipform.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Gammaform.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Gammaform.Designer.cs">
-      <DependentUpon>Gammaform.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Grayscaleform.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Grayscaleform.Designer.cs">
-      <DependentUpon>Grayscaleform.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HSLConversionform.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HSLConversionform.Designer.cs">
-      <DependentUpon>HSLConversionform.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ImageAnalyseform.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ImageAnalyseform.Designer.cs">
-      <DependentUpon>ImageAnalyseform.cs</DependentUpon>
-    </Compile>
-    <Compile Include="InsertImageform.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InsertImageform.Designer.cs">
-      <DependentUpon>InsertImageform.cs</DependentUpon>
-    </Compile>
-    <Compile Include="InsertShapeform.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InsertShapeform.Designer.cs">
-      <DependentUpon>InsertShapeform.cs</DependentUpon>
-    </Compile>
-    <Compile Include="InsertTextform.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InsertTextform.Designer.cs">
-      <DependentUpon>InsertTextform.cs</DependentUpon>
-    </Compile>
+    <Compile Include="BitmapTransform\TransformContrast.cs" />
+    <Compile Include="BitmapTransform\TransformInvert.cs" />
     <Compile Include="Interface\MainInterface.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Interface\MainInterface.Designer.cs">
       <DependentUpon>MainInterface.cs</DependentUpon>
     </Compile>
-    <Compile Include="Invertform.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Invertform.Designer.cs">
-      <DependentUpon>Invertform.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainMenuform.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainMenuform.Designer.cs">
-      <DependentUpon>MainMenuform.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resizeform.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Resizeform.Designer.cs">
-      <DependentUpon>Resizeform.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Resolutionform.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Resolutionform.Designer.cs">
-      <DependentUpon>Resolutionform.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Rotateform.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Rotateform.Designer.cs">
-      <DependentUpon>Rotateform.cs</DependentUpon>
-    </Compile>
-    <Compile Include="YCbCrConversionform.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="YCbCrConversionform.Designer.cs">
-      <DependentUpon>YCbCrConversionform.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Brightnessform.resx">
-      <DependentUpon>Brightnessform.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ColorFilterform.resx">
-      <DependentUpon>ColorFilterform.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Contrastform.resx">
-      <DependentUpon>Contrastform.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Cropform.resx">
-      <DependentUpon>Cropform.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DeadPixelform.resx">
-      <DependentUpon>DeadPixelform.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Flipform.resx">
-      <DependentUpon>Flipform.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Gammaform.resx">
-      <DependentUpon>Gammaform.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Grayscaleform.resx">
-      <DependentUpon>Grayscaleform.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HSLConversionform.resx">
-      <DependentUpon>HSLConversionform.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ImageAnalyseform.resx">
-      <DependentUpon>ImageAnalyseform.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InsertImageform.resx">
-      <DependentUpon>InsertImageform.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InsertShapeform.resx">
-      <DependentUpon>InsertShapeform.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InsertTextform.resx">
-      <DependentUpon>InsertTextform.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Interface\MainInterface.resx">
       <DependentUpon>MainInterface.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Invertform.resx">
-      <DependentUpon>Invertform.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainMenuform.resx">
-      <DependentUpon>MainMenuform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -229,18 +72,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Resizeform.resx">
-      <DependentUpon>Resizeform.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resolutionform.resx">
-      <DependentUpon>Resolutionform.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Rotateform.resx">
-      <DependentUpon>Rotateform.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="YCbCrConversionform.resx">
-      <DependentUpon>YCbCrConversionform.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
