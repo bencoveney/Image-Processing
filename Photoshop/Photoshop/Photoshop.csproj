@@ -74,12 +74,6 @@
     <None Include="TODO\Cropform.designer.cs">
       <DependentUpon>Cropform.cs</DependentUpon>
     </None>
-    <None Include="TODO\ImageAnalyseform.cs">
-      <SubType>Form</SubType>
-    </None>
-    <None Include="TODO\ImageAnalyseform.designer.cs">
-      <DependentUpon>ImageAnalyseform.cs</DependentUpon>
-    </None>
     <None Include="TODO\InsertImageform.cs">
       <SubType>Form</SubType>
     </None>
@@ -113,9 +107,6 @@
     </Compile>
     <None Include="TODO\Cropform.resx">
       <DependentUpon>Cropform.cs</DependentUpon>
-    </None>
-    <None Include="TODO\ImageAnalyseform.resx">
-      <DependentUpon>ImageAnalyseform.cs</DependentUpon>
     </None>
     <None Include="TODO\InsertImageform.resx">
       <DependentUpon>InsertImageform.cs</DependentUpon>

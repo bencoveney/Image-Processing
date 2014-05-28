@@ -173,5 +173,10 @@ namespace Photoshop.Interface
 
         #endregion
 
+        private void infoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Image-Processing in C#\n\nContributors:\nMitchus\nbencoveney", "Photoshop Information", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+        }
+
     }
 }
