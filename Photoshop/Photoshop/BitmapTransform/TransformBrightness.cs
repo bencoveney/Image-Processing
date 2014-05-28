@@ -12,7 +12,7 @@ namespace Photoshop.BitmapTransform
     class TransformBrightness : IBitmapTransform
     {
         Form parameterDialog;
-        decimal brightnessAmount;
+        int brightnessAmount;
 
         public void ShowParameterDialog()
         {
@@ -20,9 +20,14 @@ namespace Photoshop.BitmapTransform
             parameterDialog = new Form();
             parameterDialog.Text = "Brightness Parameters";
 
-            // Add the brightness control to the form
+            // Add the brightness control to the form (with a label)
+            Label brightnessLabel = new Label();
+            brightnessLabel.Text = "Brightness:";
+            brightnessLabel.Location = new Point(10, 13);
+            parameterDialog.Controls.Add(brightnessLabel);
             NumericUpDown brightnessControl = new NumericUpDown();
             brightnessControl.Name = "brightnessControl";
+            brightnessControl.Location = new Point(brightnessLabel.Width + 20, 10);
             brightnessControl.Value = 0;
             brightnessControl.Maximum = 255;
             brightnessControl.Minimum = -255;
@@ -31,7 +36,9 @@ namespace Photoshop.BitmapTransform
             // Add an apply button to the form
             Button applyButton = new Button();
             applyButton.Text = "Apply";
+            applyButton.Location = new Point(10, brightnessControl.Height + 20);
             applyButton.Click += new EventHandler(CloseParameterDialog);
+            parameterDialog.Controls.Add(applyButton);
 
             // Show the dialog
             parameterDialog.ShowDialog();
@@ -43,7 +50,7 @@ namespace Photoshop.BitmapTransform
             NumericUpDown brightnessControl = parameterDialog.Controls.Find("brightnessControl", true).First() as NumericUpDown;
 
             // Extract the value
-            brightnessAmount = brightnessControl.Value;
+            brightnessAmount = (int)brightnessControl.Value;
 
             // Close the dialog
             parameterDialog.Close();
@@ -51,6 +58,8 @@ namespace Photoshop.BitmapTransform
 
         public Bitmap Transform(Bitmap Source)
         {
+            if (Source == null) throw new ArgumentNullException("Source", "No image specified");
+
             // Extract the bitmap data
             Bitmap Result = new Bitmap(Source);
             BitmapData ResultData = Result.LockBits(new Rectangle(0, 0, Result.Width, Result.Height), ImageLockMode.ReadWrite, Result.PixelFormat);
@@ -78,16 +87,15 @@ namespace Photoshop.BitmapTransform
                     int OldGreen = Pixels[CurrentLine + x + 1];
                     int OldRed = Pixels[CurrentLine + x + 2];
 
-                    Pixels[CurrentLine + x] = (byte)(OldBlue + brightnessAmount);
+                    Pixels[CurrentLine + x] = toByte(OldBlue + brightnessAmount);
                     if (OldBlue + brightnessAmount > 255) Pixels[CurrentLine + x] = 255;
                     if (OldBlue + brightnessAmount < 0) Pixels[CurrentLine + x] = 1;
 
-                    Pixels[CurrentLine + x + 1] = (byte)(OldGreen + brightnessAmount);
+                    Pixels[CurrentLine + x + 1] = toByte(OldGreen + brightnessAmount);
                     if (OldGreen + brightnessAmount > 255) Pixels[CurrentLine + x + 1] = 255;
                     if (OldGreen + brightnessAmount < 0) Pixels[CurrentLine + x + 1] = 1;
 
-
-                    Pixels[CurrentLine + x + 2] = (byte)(OldRed + brightnessAmount);
+                    Pixels[CurrentLine + x + 2] = toByte(OldRed + brightnessAmount);
                     if (OldRed + brightnessAmount > 255) Pixels[CurrentLine + x + 2] = 255;
                     if (OldRed + brightnessAmount < 0) Pixels[CurrentLine + x + 2] = 1;
                 }
@@ -97,6 +105,15 @@ namespace Photoshop.BitmapTransform
             Marshal.Copy(Pixels, 0, PtrFirstPixel, Pixels.Length);
             Result.UnlockBits(ResultData);
             return Result;
+        }
+
+        private byte toByte(int Value)
+        {
+            // Clamp the value between 0 and 255 (the min and max values)
+            if (Value < 0) Value = 0;
+            if (Value > 255) Value = 255;
+
+            return (byte)Value;
         }
     }
 }
