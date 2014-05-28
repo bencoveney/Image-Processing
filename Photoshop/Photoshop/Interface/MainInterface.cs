@@ -12,7 +12,7 @@ namespace Photoshop.Interface
 {
     public partial class MainInterface : Form
     {
-        private Bitmap CurrentImage;
+        private static Bitmap CurrentImage;
 
         public MainInterface()
         {
@@ -45,7 +45,6 @@ namespace Photoshop.Interface
                 // Enable all greyed-out menu items
                 saveToolStripMenuItem.Enabled = true;
                 transformToolStripMenuItem.Enabled = true;
-                analyseImageToolStripMenuItem.Enabled = true;
             }
         }
 
@@ -101,10 +100,16 @@ namespace Photoshop.Interface
             // Prompt the user for parameter inputs
             Transform.ShowParameterDialog();
 
-            // Perform the transformation
-            Bitmap Output = Transform.Transform(CurrentImage);
-
-            setCurrentImage(Output);
+            try
+            {
+                // Perform the transformation
+                Bitmap Output = Transform.Transform(CurrentImage);
+                setCurrentImage(Output);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to apply Transformation\n\n" + ex.Message, "Transformation Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         /// <summary>
@@ -128,6 +133,7 @@ namespace Photoshop.Interface
             result.Add("Convert to Greyscale", new TransformConvertGreyscale());
             result.Add("Convert to HSL", new TransformConvertHSL());
             result.Add("Convert to YCbCr", new TransformConvertYCbCr());
+            result.Add("Insert Image", new TransformInsertImage());
 
             return result;
         }

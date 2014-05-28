@@ -56,6 +56,7 @@
     <Compile Include="BitmapTransform\TransformColorFilter.cs" />
     <Compile Include="BitmapTransform\TransformContrast.cs" />
     <Compile Include="BitmapTransform\TransformGamma.cs" />
+    <Compile Include="BitmapTransform\TransformInsertImage.cs" />
     <Compile Include="BitmapTransform\TransformInvert.cs" />
     <Compile Include="BitmapTransform\TransformRemoveDeadPixel.cs" />
     <Compile Include="BitmapTransform\TransformResize.cs" />
