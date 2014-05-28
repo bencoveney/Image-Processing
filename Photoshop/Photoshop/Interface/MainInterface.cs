@@ -113,6 +113,7 @@ namespace Photoshop.Interface
             Dictionary<string, IBitmapTransform> result = new Dictionary<string, IBitmapTransform>();
 
             result.Add("Brightness", new TransformBrightness());
+            result.Add("Contrast", new TransformContrast());
 
             return result;
         }
