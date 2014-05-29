@@ -12,7 +12,7 @@ namespace Photoshop.BitmapTransform
         Form parameterDialog;
         int rotationAmount;
 
-        public void ShowParameterDialog()
+        public void ShowParameterDialog(Bitmap Source)
         {
             // Create a new form
             parameterDialog = new Form();

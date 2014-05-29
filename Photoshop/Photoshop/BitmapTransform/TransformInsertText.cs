@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace Photoshop.BitmapTransform
 {
-    class TransformInsertImage : IBitmapTransform
+    class TransformInsertText : IBitmapTransform
     {
         Form parameterDialog;
         Bitmap insertImage;

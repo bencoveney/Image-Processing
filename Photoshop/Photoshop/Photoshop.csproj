@@ -57,6 +57,7 @@
     <Compile Include="BitmapTransform\TransformContrast.cs" />
     <Compile Include="BitmapTransform\TransformGamma.cs" />
     <Compile Include="BitmapTransform\TransformInsertImage.cs" />
+    <Compile Include="BitmapTransform\TransformInsertText.cs" />
     <Compile Include="BitmapTransform\TransformInvert.cs" />
     <Compile Include="BitmapTransform\TransformRemoveDeadPixel.cs" />
     <Compile Include="BitmapTransform\TransformResize.cs" />
@@ -74,12 +75,6 @@
     </None>
     <None Include="TODO\Cropform.designer.cs">
       <DependentUpon>Cropform.cs</DependentUpon>
-    </None>
-    <None Include="TODO\InsertImageform.cs">
-      <SubType>Form</SubType>
-    </None>
-    <None Include="TODO\InsertImageform.designer.cs">
-      <DependentUpon>InsertImageform.cs</DependentUpon>
     </None>
     <None Include="TODO\InsertShapeform.cs">
       <SubType>Form</SubType>
@@ -108,9 +103,6 @@
     </Compile>
     <None Include="TODO\Cropform.resx">
       <DependentUpon>Cropform.cs</DependentUpon>
-    </None>
-    <None Include="TODO\InsertImageform.resx">
-      <DependentUpon>InsertImageform.cs</DependentUpon>
     </None>
     <None Include="TODO\InsertShapeform.resx">
       <DependentUpon>InsertShapeform.cs</DependentUpon>

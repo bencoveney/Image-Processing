@@ -98,7 +98,7 @@ namespace Photoshop.Interface
             IBitmapTransform Transform = getTransformDictionary().First(x => x.Key == senderItem.Text).Value;
 
             // Prompt the user for parameter inputs
-            Transform.ShowParameterDialog();
+            Transform.ShowParameterDialog(CurrentImage);
 
             try
             {
@@ -183,6 +183,5 @@ namespace Photoshop.Interface
         {
             MessageBox.Show("Image-Processing in C#\n\nContributors:\nMitchus\nbencoveney", "Photoshop Information", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
         }
-
     }
 }

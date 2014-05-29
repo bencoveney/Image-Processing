@@ -13,7 +13,7 @@ namespace Photoshop.BitmapTransform
 
         Size newSize;
 
-        public void ShowParameterDialog()
+        public void ShowParameterDialog(Bitmap Source)
         {
             // Create a new form
             parameterDialog = new Form();

@@ -11,7 +11,7 @@ namespace Photoshop.BitmapTransform
         static int k = 5; 
         static int[,] C = new int[k, 4];
 
-        public void ShowParameterDialog()
+        public void ShowParameterDialog(Bitmap Source)
         {
             // No parameters required
             // Do nothing

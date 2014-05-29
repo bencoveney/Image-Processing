@@ -14,7 +14,7 @@ namespace Photoshop.BitmapTransform
         bool horizontalFlip;
         bool verticalFlip;
 
-        public void ShowParameterDialog()
+        public void ShowParameterDialog(Bitmap Source)
         {
             // Create a new form
             parameterDialog = new Form();

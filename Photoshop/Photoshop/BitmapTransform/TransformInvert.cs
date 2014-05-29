@@ -10,7 +10,7 @@ namespace Photoshop.BitmapTransform
 {
     class TransformInvert : IBitmapTransform
     {
-        public void ShowParameterDialog()
+        public void ShowParameterDialog(Bitmap Source)
         {
             // No parameters required
             // Do nothing

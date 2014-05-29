@@ -14,7 +14,7 @@ namespace Photoshop.BitmapTransform
         Form parameterDialog;
         FilterColor filterColor;
 
-        public void ShowParameterDialog()
+        public void ShowParameterDialog(Bitmap Image)
         {
             // Create a new form
             parameterDialog = new Form();

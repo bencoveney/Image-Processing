@@ -10,7 +10,7 @@ namespace Photoshop.BitmapTransform
 {
     class TransformConvertHSL : IBitmapTransform
     {
-        public void ShowParameterDialog()
+        public void ShowParameterDialog(Bitmap Source)
         {
             // No parameters required
             // Do nothing
