@@ -127,6 +127,7 @@ namespace Photoshop.Interface
             result.Add("Flip", new TransformFlip());
             result.Add("Rotate", new TransformRotate());
             result.Add("Resize", new TransformResize());
+            result.Add("Crop", new TransformCrop());
             result.Add("Color Filter", new TransformColorFilter());
             result.Add("Remove Dead Pixels", new TransformRemoveDeadPixel());
             result.Add("Gamma", new TransformGamma());
@@ -182,7 +183,7 @@ namespace Photoshop.Interface
 
         private void infoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Image-Processing in C#\n\nContributors:\nMitchus\nbencoveney", "Photoshop Information", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            MessageBox.Show("Image Processing in C#\n\nContributors:\nMitchus\nbencoveney", "Image Processing Information", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
         }
     }
 }

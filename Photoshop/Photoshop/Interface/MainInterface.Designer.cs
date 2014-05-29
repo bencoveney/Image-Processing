@@ -152,7 +152,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainInterface";
-            this.Text = "Photoshop";
+            this.Text = "Image Processing";
             this.Load += new System.EventHandler(this.MainInterface_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

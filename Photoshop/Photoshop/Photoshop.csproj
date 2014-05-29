@@ -56,6 +56,7 @@
     <Compile Include="BitmapTransform\TransformConvertHSL.cs" />
     <Compile Include="BitmapTransform\TransformConvertGreyscale.cs" />
     <Compile Include="BitmapTransform\TransformConvertYCbCr.cs" />
+    <Compile Include="BitmapTransform\TransformCrop.cs" />
     <Compile Include="BitmapTransform\TransformFlip.cs" />
     <Compile Include="BitmapTransform\IBitmapTransform.cs" />
     <Compile Include="BitmapTransform\TransformBrightness.cs" />
@@ -77,18 +78,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <None Include="TODO\Cropform.cs">
-      <SubType>Form</SubType>
-    </None>
-    <None Include="TODO\Cropform.designer.cs">
-      <DependentUpon>Cropform.cs</DependentUpon>
-    </None>
-    <None Include="TODO\InsertShapeform.cs">
-      <SubType>Form</SubType>
-    </None>
-    <None Include="TODO\InsertShapeform.designer.cs">
-      <DependentUpon>InsertShapeform.cs</DependentUpon>
-    </None>
     <None Include="TODO\InsertTextform.cs">
       <SubType>Form</SubType>
     </None>
@@ -111,12 +100,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="TODO\Cropform.resx">
-      <DependentUpon>Cropform.cs</DependentUpon>
-    </None>
-    <None Include="TODO\InsertShapeform.resx">
-      <DependentUpon>InsertShapeform.cs</DependentUpon>
-    </None>
     <None Include="TODO\InsertTextform.resx">
       <DependentUpon>InsertTextform.cs</DependentUpon>
     </None>
