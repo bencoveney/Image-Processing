@@ -46,6 +46,7 @@ namespace Photoshop.BitmapTransform
             // Add an apply button to the form
             Button applyButton = new Button();
             applyButton.Text = "Apply";
+            applyButton.Width = 200;
             applyButton.Location = new Point(10, widthControl.Height + heightControl.Height + 30);
             applyButton.Click += new EventHandler(CloseParameterDialog);
             parameterDialog.Controls.Add(applyButton);

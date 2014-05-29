@@ -134,6 +134,7 @@ namespace Photoshop.Interface
             result.Add("Convert to HSL", new TransformConvertHSL());
             result.Add("Convert to YCbCr", new TransformConvertYCbCr());
             result.Add("Insert Image", new TransformInsertImage());
+            result.Add("Insert Shape", new TransformInsertShape());
 
             return result;
         }

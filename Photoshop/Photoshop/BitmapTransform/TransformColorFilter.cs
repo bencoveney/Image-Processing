@@ -20,7 +20,7 @@ namespace Photoshop.BitmapTransform
             parameterDialog = new Form();
             parameterDialog.Text = "Color Filter Parameters";
 
-            // Add the brightness control to the form (with a label)
+            // Add the Color control to the form (with a label)
             Label filterColorLabel = new Label();
             filterColorLabel.Text = "Filter Color:";
             filterColorLabel.Location = new Point(10, 13);
@@ -34,6 +34,7 @@ namespace Photoshop.BitmapTransform
             // Add an apply button to the form
             Button applyButton = new Button();
             applyButton.Text = "Apply";
+            applyButton.Width = 200;
             applyButton.Location = new Point(10, filterColorControl.Height + 20);
             applyButton.Click += new EventHandler(CloseParameterDialog);
             parameterDialog.Controls.Add(applyButton);

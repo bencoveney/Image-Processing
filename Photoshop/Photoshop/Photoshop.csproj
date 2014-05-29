@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BitmapTransform\SelectOnImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BitmapTransform\SelectOnImage.Designer.cs">
+      <DependentUpon>SelectOnImage.cs</DependentUpon>
+    </Compile>
     <Compile Include="BitmapTransform\TransformConvertHSL.cs" />
     <Compile Include="BitmapTransform\TransformConvertGreyscale.cs" />
     <Compile Include="BitmapTransform\TransformConvertYCbCr.cs" />
@@ -57,6 +63,7 @@
     <Compile Include="BitmapTransform\TransformContrast.cs" />
     <Compile Include="BitmapTransform\TransformGamma.cs" />
     <Compile Include="BitmapTransform\TransformInsertImage.cs" />
+    <Compile Include="BitmapTransform\TransformInsertShape.cs" />
     <Compile Include="BitmapTransform\TransformInsertText.cs" />
     <Compile Include="BitmapTransform\TransformInvert.cs" />
     <Compile Include="BitmapTransform\TransformRemoveDeadPixel.cs" />
@@ -88,6 +95,9 @@
     <None Include="TODO\InsertTextform.designer.cs">
       <DependentUpon>InsertTextform.cs</DependentUpon>
     </None>
+    <EmbeddedResource Include="BitmapTransform\SelectOnImage.resx">
+      <DependentUpon>SelectOnImage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interface\MainInterface.resx">
       <DependentUpon>MainInterface.cs</DependentUpon>
     </EmbeddedResource>
