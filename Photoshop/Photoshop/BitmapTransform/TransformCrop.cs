@@ -19,7 +19,7 @@ namespace Photoshop.BitmapTransform
         {
             // Create a new form
             parameterDialog = new Form();
-            parameterDialog.Text = "Insert Image Parameters";
+            parameterDialog.Text = "Crop Parameters";
             parameterDialog.Width = 400;
 
             // Add a button to launch the selection control

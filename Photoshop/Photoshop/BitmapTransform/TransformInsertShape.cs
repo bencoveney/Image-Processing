@@ -23,7 +23,7 @@ namespace Photoshop.BitmapTransform
         {
             // Create a new form
             parameterDialog = new Form();
-            parameterDialog.Text = "Insert Image Parameters";
+            parameterDialog.Text = "Insert Shape Parameters";
             parameterDialog.Width = 400;
 
             // Add the shape control to the form (with a label)

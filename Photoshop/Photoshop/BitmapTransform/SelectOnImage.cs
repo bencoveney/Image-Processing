@@ -44,6 +44,7 @@ namespace Photoshop.BitmapTransform
 
         private Bitmap image;
         private Brush selectionBrush = new SolidBrush(Color.FromArgb(128, 72, 145, 220));
+        private Pen selectionPen = new Pen(Color.Red);
 
         bool isPointSelection;
 
@@ -58,6 +59,7 @@ namespace Photoshop.BitmapTransform
             this.image = Image;
             this.isPointSelection = isPointSelection;
             selectedArea = new Rectangle(0, 0, 0, 0);
+            selectedAreaStartPoint = new Point();
             selectedPoint = new Point(0, 0);
 
             // Take selection-type dependant actions
@@ -77,10 +79,15 @@ namespace Photoshop.BitmapTransform
         {
             if (isPointSelection)
             {
-                Rectangle verticalLine = new Rectangle(selectedPoint.X, selectedPoint.Y-5, 1, 11);
-                e.Graphics.FillRectangle(selectionBrush, verticalLine);
-                Rectangle horizontalLine = new Rectangle(selectedPoint.X - 5, selectedPoint.Y, 11, 1);
-                e.Graphics.FillRectangle(selectionBrush, verticalLine);
+                // Draw a vertical line
+                Point up = new Point(selectedPoint.X, selectedPoint.Y - 10);
+                Point down = new Point(selectedPoint.X, selectedPoint.Y + 10);
+                e.Graphics.DrawLine(selectionPen, up, down);
+
+                // Draw a horizontal line
+                Point left = new Point(selectedPoint.X - 10, selectedPoint.Y);
+                Point right = new Point(selectedPoint.X + 10, selectedPoint.Y);
+                e.Graphics.DrawLine(selectionPen, left, right);
             }
             else
             {
@@ -90,7 +97,25 @@ namespace Photoshop.BitmapTransform
 
         private void ImageDisplay_MouseDown(object sender, MouseEventArgs e)
         {
-            selectedAreaStartPoint = e.Location;
+            // Retrieve the mouse location
+            if (isPointSelection)
+            {
+                // Only continue if the left mouse button is pressed
+                if (e.Button != MouseButtons.Left)
+                    return;
+
+                // set the point to the mouse location
+                selectedPoint = e.Location;
+
+                // Redraw the picturebox
+                ImageDisplay.Invalidate();
+            }
+            else
+            {
+                selectedAreaStartPoint = e.Location;
+            }
+
+            // Redraw the form
             Invalidate();
         }
 

@@ -78,12 +78,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <None Include="TODO\InsertTextform.cs">
-      <SubType>Form</SubType>
-    </None>
-    <None Include="TODO\InsertTextform.designer.cs">
-      <DependentUpon>InsertTextform.cs</DependentUpon>
-    </None>
     <EmbeddedResource Include="BitmapTransform\SelectOnImage.resx">
       <DependentUpon>SelectOnImage.cs</DependentUpon>
     </EmbeddedResource>
@@ -100,9 +94,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="TODO\InsertTextform.resx">
-      <DependentUpon>InsertTextform.cs</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

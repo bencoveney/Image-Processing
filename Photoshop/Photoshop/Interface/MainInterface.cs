@@ -75,20 +75,31 @@ namespace Photoshop.Interface
         /// </summary>
         private void populateTransformList()
         {
-            // Create a list to house the menu items
+            // Get the list of transforms
             Dictionary<string, IBitmapTransform> TransformDictionary = getTransformDictionary();
-            ToolStripMenuItem[] items = new ToolStripMenuItem[TransformDictionary.Count];
 
-            // Populate the list with named items
+            // Populate the menu using the list
             for (int i = 0; i < TransformDictionary.Count; i++)
             {
-                items[i] = new ToolStripMenuItem();
-                items[i].Text = TransformDictionary.ElementAt(i).Key;
-                items[i].Click += new EventHandler(transformToolStripItem_Click);
-            }
+                // Create the menu item
+                ToolStripMenuItem item = new ToolStripMenuItem();
+                item.Text = TransformDictionary.ElementAt(i).Key;
+                item.Click += new EventHandler(transformToolStripItem_Click);
 
-            // Add the list of new items to the menu
-            transformToolStripMenuItem.DropDownItems.AddRange(items);
+                // Add it to the menu
+                transformToolStripMenuItem.DropDownItems.Add(item);
+
+                // UGLY CODE
+                // If the given item was one of a selected few, add a seperator to the list after it
+                if (TransformDictionary.ElementAt(i).Key == "Crop" ||
+                    TransformDictionary.ElementAt(i).Key == "Color Filter" ||
+                    TransformDictionary.ElementAt(i).Key == "Convert to YCbCr" ||
+                    TransformDictionary.ElementAt(i).Key == "Insert Text")
+                {
+                    transformToolStripMenuItem.DropDownItems.Add(new ToolStripSeparator());
+                }
+            
+            }
         }
 
         private void transformToolStripItem_Click(object sender, EventArgs e)
@@ -121,22 +132,26 @@ namespace Photoshop.Interface
         {
             Dictionary<string, IBitmapTransform> result = new Dictionary<string, IBitmapTransform>();
 
-            result.Add("Brightness", new TransformBrightness());
-            result.Add("Contrast", new TransformContrast());
-            result.Add("Invert Colors", new TransformInvert());
             result.Add("Flip", new TransformFlip());
             result.Add("Rotate", new TransformRotate());
             result.Add("Resize", new TransformResize());
             result.Add("Crop", new TransformCrop());
-            result.Add("Color Filter", new TransformColorFilter());
-            result.Add("Remove Dead Pixels", new TransformRemoveDeadPixel());
+
+            result.Add("Brightness", new TransformBrightness());
+            result.Add("Contrast", new TransformContrast());
             result.Add("Gamma", new TransformGamma());
+            result.Add("Invert Colors", new TransformInvert());
+            result.Add("Color Filter", new TransformColorFilter());
+
             result.Add("Convert to Greyscale", new TransformConvertGreyscale());
             result.Add("Convert to HSL", new TransformConvertHSL());
             result.Add("Convert to YCbCr", new TransformConvertYCbCr());
+
             result.Add("Insert Image", new TransformInsertImage());
             result.Add("Insert Shape", new TransformInsertShape());
             result.Add("Insert Text", new TransformInsertText());
+
+            result.Add("Remove Dead Pixels", new TransformRemoveDeadPixel());
 
             return result;
         }
@@ -182,9 +197,13 @@ namespace Photoshop.Interface
 
         #endregion
 
+        #region Info
+
         private void infoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Image Processing in C#\n\nContributors:\nMitchus\nbencoveney", "Image Processing Information", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
         }
+
+        #endregion
     }
 }

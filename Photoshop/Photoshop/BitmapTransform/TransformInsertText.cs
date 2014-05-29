@@ -24,7 +24,7 @@ namespace Photoshop.BitmapTransform
         {
             // Create a new form
             parameterDialog = new Form();
-            parameterDialog.Text = "Insert Image Parameters";
+            parameterDialog.Text = "Insert Text Parameters";
             parameterDialog.Width = 400;
 
             // Add the text input
@@ -82,6 +82,11 @@ namespace Photoshop.BitmapTransform
             // Retrieve the text
             TextBox textControl = parameterDialog.Controls.Find("textControl", true).First() as TextBox;
             text = textControl.Text;
+
+            if (text == "")
+            {
+                MessageBox.Show("No text given!", "Empty Parameter", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
             // Close the dialog
             parameterDialog.Close();
