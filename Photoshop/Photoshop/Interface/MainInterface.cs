@@ -12,6 +12,7 @@ namespace Photoshop.Interface
 {
     public partial class MainInterface : Form
     {
+        // Do not write to here directly, use setCurrentImage()
         private static Bitmap CurrentImage;
 
         public MainInterface()
@@ -25,6 +26,11 @@ namespace Photoshop.Interface
         }
 
         #region File operations
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            setCurrentImage(new Bitmap(100, 100));
+        }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -64,6 +70,11 @@ namespace Photoshop.Interface
             {
                 CurrentImage.Save(saveFileDialog.FileName);
             }
+        }
+
+        private void quitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         #endregion 
